@@ -2,7 +2,7 @@
   "name": "backend-yt",
   "version": "1.0.0",
   "description": "a basic app to deploy",
-  "type" : "module",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon src/index.js"
@@ -14,6 +14,7 @@
   "author": "Ajinkya Nikumbh",
   "license": "ISC",
   "dependencies": {
-    "dotenv": "^16.4.5"
+    "dotenv": "^16.4.5",
+    "prettier": "^3.3.3"
   }
 }
