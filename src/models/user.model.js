@@ -1,6 +1,7 @@
 import mongoose, {Schema} from "mongoose";
 import { JsonWebTokenError, TokenExpiredError } from "jsonwebtoken";
 import bcrypt from "bcrypt"
+import { json } from "express";
 
 
 const userSchema = new Schema(
@@ -91,9 +92,8 @@ userSchema.methods.generateAccessToken = function(){
     {
         TokenExpiredError: process.env.ACCESS_TOKEN_EXPIRY
     }
-
-)
-}
+    )
+    }
 userSchema.methods.generateRefreshToken = function(){
     return  jwt.sign({
         // ye to data base se aayengi 
@@ -111,3 +111,27 @@ userSchema.methods.generateRefreshToken = function(){
 
 
 export const User = mongoose.model("User", userSchema)
+
+
+// // Most common Headers
+//  Accept : application /json
+//  Userr :agent, brower engine safari se wo sab yaha se nikala jata hai 
+// authorization  beararer token
+// content type , 
+//  cookie, cache-control data ko kab remove karu wo likho 
+
+
+// access control allow origin
+// access ccontrol allow  Credential
+
+
+/*
+get : retrive a resource
+put : replace a resource
+post : interact with resource(mostly add)
+delete : remove a resource
+trace : loopback test(gett some data)
+
+
+
+*/

@@ -20,5 +20,16 @@ app.use(express.urlencoded({extended: true, limit: "20kb"}))
 app.use(express.static("public"))
 app.use(cookieParser())
 
+// routes import
+
+import useRouter from "./routes/user.routes.js"
+
+//routes declaration syntax
+
+app.use("/api/v1/users",useRouter)
+// apn api bana rahe so uska version likhna is good practise
+// https://localhost:8000/users/register/
+
+
 
 export {app}
