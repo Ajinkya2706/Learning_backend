@@ -68,7 +68,8 @@ const userSchema = new Schema(
         if(!this.isModified("password")) return next();
         // mtlb jab hi password modify hoga tab hi password hash me convert hoga 
         // nahi to return ho jayega
-        this.password = bcrypt.hash(this.password,10)
+        this.password =  await bcrypt.hash(this.password,10)
+        // await isiliye kiya hai ki thoda saa time to lagega hi isi wajah se
 
         next()
     })
